@@ -10,6 +10,9 @@
   </head>
 
   <body>
+
+    <% @user = User.find(session[:user_id]).name %>
+    <span>current user is <%= @user %> </span>
     <%= yield %>
   </body>
 </html>
