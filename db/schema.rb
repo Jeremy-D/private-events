@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_12_01_180137) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "event_id"
+    t.index ["event_id"], name: "index_users_on_event_id"
   end
 
 end
