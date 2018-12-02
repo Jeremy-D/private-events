@@ -1,1 +1,18 @@
 <h1>Show</h1>
+<h2><%= @user.name %></h2>
+<h3><%= @user.email %> </h3>
+
+<!-- show user attributes -->
+<h3>User data</h3>
+<% @user.attributes.each do|atr| %>
+<p style="color:red"><%= atr %></p>
+<% end %>
+
+<!-- show event data for the user -->
+<h3>User event data</h3>
+<% @user.events.each do |event| %>
+	<% event.attributes.each do |attribute| %>
+		<li style="color:blue"><%= attribute %></li>
+	<% end %>
+	<br>
+<% end %>

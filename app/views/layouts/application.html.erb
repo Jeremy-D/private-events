@@ -11,8 +11,16 @@
 
   <body>
 
-    <% @user = User.find(session[:user_id]).name %>
+    <% 
+    if (logged_in?)
+      @user = User.find(session[:user_id]).name 
+    end
+    %>
+    <%= render 'layouts/header' %>
     <span>current user is <%= @user %> </span>
     <%= yield %>
+    <%= logout_path %>
+    <%= link_to "Log out", logout_path, method: "delete" %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
