@@ -16,3 +16,14 @@
 	<% end %>
 	<br>
 <% end %>
+
+<h3>Events user is attending</h3>
+<% party_count = 0 %>
+<% @user.attendances.all.each do |a| %>
+	<%= Event.find(a.event_id).title %>
+	<br>
+<% end %>
+
+
+ <!-- <p><%= Event.find(@user.attendances.first.event_id).title %></p> -->
+<!-- <p><%= @user.attendances.first.user_id %></p> -->

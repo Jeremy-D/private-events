@@ -4,5 +4,6 @@
 <%= link_to 'Sign up', signup_path %>
 <% else %>
 <%= link_to 'All Events', events_path %>
+<%= link_to 'NEW EVENT', new_event_path %>
 <%= link_to 'Logout', logout_path, method: 'delete' %>
 <% end %>

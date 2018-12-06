@@ -1,4 +1,10 @@
 <h1>Checkout my event!</h1>
 <h3>Event title: <%= @event.title %></h3>
 <span>Created by: <%= User.find(@event.user_id).name %></span>
+<% @event.attendances.each do |a| %>
+	<p><%= User.find(a.user_id).name %> is attending this event<p>
+<% end %>
+
+
+
 <br>
